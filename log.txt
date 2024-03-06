@@ -1,0 +1,5 @@
+physics engine:
+- get bouncing ball working
+- kinematics: collisions
+- springs
+- ...
