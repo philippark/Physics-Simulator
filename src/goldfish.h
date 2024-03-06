@@ -21,6 +21,9 @@ private:
     sf::Sprite mSprite;
     sf::Vector2i mSource;
     sf::RectangleShape rectangle;
+
+    int x_ = 1;
+    int y_ = 1;
 };
 
 }

@@ -4,6 +4,8 @@
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 
+#include <iostream>
+
 namespace test {
 Goldfish::Goldfish(const sf::Texture& imagePath) :
                 mSprite(imagePath){
@@ -25,7 +27,23 @@ void Goldfish::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 
 
 void Goldfish::move(){
-    rectangle.move(.1f, .1f);
+    rectangle.move(x_, y_);
+
+    sf::Vector2f position = rectangle.getPosition();
+
+    if (position.x == 800){
+        x_ = -1;
+    }
+    if (position.x == 0){
+        x_ = 1;
+    }
+    if (position.y == 600){
+        y_ = -1;
+    }
+    if (position.y == 0){
+        y_ = 1;
+    }
+
 }
 
 
