@@ -7,9 +7,12 @@
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+    int width = 1000;
+    int height = 800;
+    sf::RenderWindow window(sf::VideoMode(width, height), "My window");
+    window.setFramerateLimit(60);
 
-    Particle p1;
+    Particle p1(width, height);
 
     while (window.isOpen())
     {

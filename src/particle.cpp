@@ -1,4 +1,5 @@
 #include "particle.h"
+#include <iostream>
 
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Rect.hpp>
@@ -8,15 +9,20 @@ Particle::Particle(){
     particle.setRadius(50);
 }
 
+Particle::Particle(int width, int height){
+    particle.setRadius(50);
+    screen_width = width;
+    screen_height = height;
+}
+
 void Particle::update(){
-    time += timestep;
     sf::Vector2f position = particle.getPosition(); 
 
-    if (position.y >= 500){
-        return;
+    if (position.y + particle.getRadius() > screen_height){
+        velocity = -velocity * energy_loss;
     }
-    int new_y = position.y + (timestep * (velocity + timestep * acceleration / 2));
 
-    particle.setPosition(position.x, new_y);
-    velocity += timestep * acceleration;
+    particle.move(0, velocity);
+    velocity += acceleration;
+
 }

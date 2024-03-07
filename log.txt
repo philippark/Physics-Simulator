@@ -3,3 +3,18 @@ physics engine:
 - kinematics: collisions
 - springs
 - ...
+
+- collision detection, gravity, projectile motion
+particle dynamics, fluid dynamics, or celestial mechanics
+
+fun ideas:
+- sand simulator
+- fluid simulator
+- mechanics
+
+done so far:
+- got graphics, and a ball (particle) to fall down at the speed of gravity
+
+next step for this week 3/5/24:
+- get it to bounce, just vertically.
+- then, get it to bounce any direction
