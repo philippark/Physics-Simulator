@@ -11,6 +11,7 @@ Particle::Particle(){
 
 Particle::Particle(int width, int height){
     particle.setRadius(50);
+    particle.setPosition(100, 100);
     screen_width = width;
     screen_height = height;
 }
@@ -18,11 +19,31 @@ Particle::Particle(int width, int height){
 void Particle::update(){
     sf::Vector2f position = particle.getPosition(); 
 
-    if (position.y + particle.getRadius() > screen_height){
-        velocity = -velocity * energy_loss;
+    //bounce off bottom
+    if (position.y + 2*particle.getRadius() > screen_height){
+        y_velocity = -y_velocity * energy_loss;
+        particle.setPosition(position.x, screen_height - 2*particle.getRadius());
     }
 
-    particle.move(0, velocity);
-    velocity += acceleration;
+    //bounce off top
+    if (position.y < 0){
+        y_velocity = -y_velocity * energy_loss;
+        particle.setPosition(position.x, 0);
+    }
+
+    //bounce off right wall
+    if (position.x + 2*particle.getRadius() > screen_width){
+        x_velocity = -x_velocity * energy_loss;
+        particle.setPosition(screen_width - 2*particle.getRadius(), position.y);
+    }
+
+    //bounce off left wall
+    if (position.x < 0){
+        x_velocity = -x_velocity * energy_loss;
+        particle.setPosition(0, position.y);
+    }
+
+    particle.move(x_velocity, y_velocity);
+    y_velocity += acceleration;
 
 }
