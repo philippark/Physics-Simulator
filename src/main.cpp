@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-#include "particle.h"
+#include "particle/particle.h"
 
 int main()
 {
