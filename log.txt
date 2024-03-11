@@ -1,5 +1,5 @@
 physics engine:
-- get bouncing ball working
+- get bouncing ball working +
 - kinematics: collisions
 - springs
 - ...
@@ -12,9 +12,13 @@ fun ideas:
 - fluid simulator
 - mechanics
 
+3/5/24
 done so far:
 - got graphics, and a ball (particle) to fall down at the speed of gravity
-
-next step for this week 3/5/24:
+next step:
 - get it to bounce, just vertically.
 - then, get it to bounce any direction
+
+3/6/24:
+- ahead of plans, got multi-direction bounce completed
+- next step, get collision with multiple balls
