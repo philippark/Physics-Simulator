@@ -20,10 +20,10 @@ private:
     int screen_width;
     int screen_height;
 
-    float y_velocity = 50;
-    float x_velocity = -5;
+    float y_velocity = 5;
+    float x_velocity = 0;
     float acceleration = 1;
-    float energy_loss = 0.95;
+    float energy_loss = 0.8;
 
     sf::CircleShape particle;
 };
